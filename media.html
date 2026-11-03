@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медиа — Живая Тяга</title>
+    <meta name="description" content="Фотогалерея прошлых лет мероприятия Живая Тяга.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Живая Тяга">
+            </a>
+        </div>
+
+        <nav class="nav" id="nav">
+            <a href="index.html">Главная</a>
+            <a href="visitors.html">Посетителям</a>
+            <a href="participants.html">Участникам</a>
+            <a href="media.html">Медиа</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <a href="participants.html" class="btn-primary header-btn">
+            Подать заявку
+        </a>
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker__track" id="track">
+    <div class="ticker__item">
+      ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │ ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │ ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+
+<section class="media-gallery visible">
+    <div class="container">
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Фото будут вставляться через JS -->
+        </div>
+
+        <div class="gallery-pagination" id="galleryPagination">
+            <!-- Пагинация создаётся JS -->
+        </div>
+
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <img class="lightbox-img" src="">
+    <span class="lightbox-next">&#10095;</span>
+</div>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Живая Тяга</h3>
+            <p>Организатор: ООО "Горизонт"</p>
+        </div>
+        <div>
+            <h4>Навигация</h4>
+            <a href="index.html">Главная</a><br>
+            <a href="visitors.html">Посетителям</a><br>
+            <a href="participants.html">Участникам</a><br>
+            <a href="media.html">Медиа</a><br>
+            <a href="contacts.html">Контакты</a>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>Тел: +7 (905) 055-50-99</p>
+            <p>Email: d.bochkarev@agatgroup.com</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/media.js"></script>
+<script src="js/stroka.js"></script>
+
+</body>
+</html>

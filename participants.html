@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Участникам — Живая Тяга</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/participants.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<div class="toast" id="successToast">
+    Заявка успешно отправлена!
+</div>
+
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Живая Тяга">
+            </a>
+        </div>
+
+        <nav class="nav" id="nav">
+            <a href="index.html">Главная</a>
+            <a href="visitors.html">Посетителям</a>
+            <a href="participants.html">Участникам</a>
+            <a href="media.html">Медиа</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <a href="participants.html" class="btn-primary header-btn">
+            Подать заявку
+        </a>
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker__track" id="track">
+    <div class="ticker__item">
+      ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │ ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │ ЖИВАЯ ТЯГА │ 5 СЕНТЯБРЯ 2026 │
+    </div>
+  </div>
+</div>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Участникам</h1>
+        <p>Подайте заявку на участие в мероприятии</p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <form id="participant-form" method="POST" action="send.php">
+
+            <div class="form-group">
+                <label>ФИО *</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Телефон *</label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Формат участия *</label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="format[]" value="С лошадью">
+                    Участие с лошадью
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="format[]" value="Со стендом">
+                    Участие со стендом
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="format[]" value="Партнер">
+                    Стать партнером
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="format[]" value="Спонсор">
+                    Стать спонсором
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>Ваш вопрос</label>
+                <textarea name="message" rows="4"></textarea>
+            </div>
+
+            <label class="checkbox consent">
+                <input type="checkbox" name="consent" required>
+                    <span>
+                        Даю согласие на обработку 
+                        <a href="docs/СОПД.pdf" target="_blank" download>
+                        персональных данных
+                        </a>
+                        и соглашаюсь с 
+                        <a href="docs/Политика_ПД.pdf" target="_blank" download>
+                        политикой конфиденциальности
+                        </a>.
+                    </span>
+            </label>
+
+            <button type="submit" class="btn-primary" id="submitBtn" disabled>
+                Отправить заявку
+            </button>
+
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Живая Тяга</h3>
+            <p>Организатор: ООО "Горизонт"</p>
+        </div>
+
+        <div>
+            <h4>Навигация</h4>
+            <a href="index.html">Главная</a><br>
+            <a href="visitors.html">Посетителям</a><br>
+            <a href="participants.html">Участникам</a><br>
+            <a href="media.html">Медиа</a><br>
+            <a href="contacts.html">Контакты</a>
+        </div>
+
+        <div>
+            <h4>Контакты</h4>
+            <p>Тел: +7 (905) 055-50-99</p>
+            <p>Email: d.bochkarev@agatgroup.com</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 Живая Тяга. Все права защищены.
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/form.js"></script>
+<script src="js/button_send.js"></script>
+<script src="js/stroka.js"></script>
+
+</body>
+</html>
