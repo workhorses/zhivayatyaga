@@ -1,0 +1,283 @@
+/* ================= VISITORS PAGE ================= */
+
+.visitors-section {
+    padding: 100px 0;
+}
+
+.light-bg {
+    background: #f7f7f7;
+}
+
+/* ===== MAP CARD ===== */
+
+.map-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    overflow: hidden;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* золотая линия */
+.map-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gold);
+}
+
+.map-header {
+    padding: 40px 50px 20px;
+}
+
+.map-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.map-header p {
+    color: #666;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+.map-footer {
+    padding: 30px 50px 40px;
+}
+
+/* адаптив */
+
+@media (max-width: 768px) {
+
+    .map-header,
+    .map-footer {
+        padding: 25px;
+    }
+
+    .map-wrapper iframe {
+        height: 350px;
+    }
+
+}
+
+
+.transport-box {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.rules-box {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.rules-list {
+    line-height: 1.8;
+}
+
+.rules-list li {
+    margin-bottom: 15px;
+}
+
+.rules-list ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.rules-final {
+    margin-top: 40px;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.rules-sublist {
+    margin-top: 15px;
+    margin-left: 20px;
+    list-style: none;
+}
+
+.rules-sublist li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+}
+
+.rules-sublist li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--red);
+}
+
+/* ===== RULES CARD ===== */
+
+.rules-section {
+    background: #f5f5f5;
+    padding: 120px 0;
+}
+
+.rules-card {
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.rules-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 12px 12px 0 0;
+}
+
+.rules-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.rules-list {
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.rules-list > li {
+    margin-bottom: 20px;
+}
+
+.rules-sublist {
+    margin-top: 15px;
+    margin-left: 20px;
+    list-style: none;
+}
+
+.rules-sublist li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+}
+
+.rules-sublist li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--red);
+}
+
+.rules-final {
+    margin-top: 50px;
+    font-weight: 700;
+    color: var(--red);
+    font-size: 18px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .rules-card {
+        padding: 30px;
+    }
+
+    .rules-title {
+        font-size: 20px;
+    }
+
+    .rules-list {
+        font-size: 15px;
+    }
+
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 768px) {
+
+    /* Уменьшаем расстояние между секциями */
+    .visitors-section {
+        padding: 60px 0;
+    }
+
+    .rules-section {
+        padding: 70px 0;
+    }
+
+    /* Карточка карты */
+    .map-card {
+        border-radius: 12px;
+    }
+
+    .map-header {
+        padding: 25px 20px 10px;
+    }
+
+    .map-header h2 {
+        font-size: 20px;
+    }
+
+    .map-wrapper iframe {
+        height: 320px;
+        margin-top: 30px;
+    }
+
+    .map-footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Карточка правил */
+    .rules-card {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+
+    .rules-title {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .rules-list {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .rules-list > li {
+        margin-bottom: 16px;
+    }
+
+    .rules-sublist {
+        margin-left: 15px;
+    }
+
+    .rules-final {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    /* Блок транспорта */
+    .transport-box {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+}

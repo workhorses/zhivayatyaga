@@ -1,0 +1,229 @@
+/* ================= PAGE HERO ================= */
+
+.page-hero {
+    padding: 140px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 60%, #f5f5f5 60%);
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.page-hero p {
+    font-size: 20px;
+    color: #666;
+}
+
+/* ================= FORM SECTION ================= */
+
+.form-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+#participant-form {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+}
+
+/* ================= FORM GROUP ================= */
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ================= INPUTS ================= */
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s ease;
+    background: #fafafa;
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--red);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(225,6,0,0.08);
+}
+
+/* ================= CHECKBOXES ================= */
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--red);
+    cursor: pointer;
+}
+
+/* ================= CONSENT ================= */
+
+.consent {
+    align-items: flex-start;   /* вместо center */
+    margin-top: 25px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.consent input {
+    margin-top: 4px;   /* аккуратное выравнивание */
+    flex-shrink: 0;
+}
+
+.consent span {
+    display: block;
+}
+
+.consent a {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.consent a:hover {
+    opacity: 0.8;
+}
+
+/* ================= BUTTON ================= */
+
+#participant-form .btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#participant-form .btn-primary {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#participant-form .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background: #f0fff4;
+    border: 1px solid #d4edda;
+    border-radius: 6px;
+    color: #2e7d32;
+    margin-top: 20px;
+}
+
+/* ================= ERROR STATE ================= */
+
+input.error,
+textarea.error {
+    border-color: #d32f2f;
+    background: #fff5f5;
+}
+
+input.valid,
+textarea.valid {
+    border-color: #2e7d32;
+    background: #f4fff7;
+}
+
+input.invalid,
+textarea.invalid {
+    border-color: #d32f2f;
+    background: #fff5f5;
+}
+
+.field-error {
+    font-size: 13px;
+    color: #d32f2f;
+    margin-top: 5px;
+}
+
+/* ================= TOAST ================= */
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2e7d32;
+    color: #fff;
+    padding: 16px 22px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .page-hero {
+        padding: 100px 0 60px;
+    }
+
+    .page-hero h1 {
+        font-size: 32px;
+    }
+
+    .form-section {
+        padding: 60px 0;
+    }
+
+    #participant-form {
+        padding: 25px;
+        box-shadow: none;
+        border: 1px solid #eee;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+}

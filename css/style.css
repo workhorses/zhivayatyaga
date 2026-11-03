@@ -1,0 +1,794 @@
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+:root {
+    --red: #e10600;
+    --gold: #d4af37;
+    --black: #111;
+    --white: #ffffff;
+    --light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* LOGO */
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header .container {
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+}
+
+/* NAV */
+
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* BUTTON */
+
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 12px 22px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--black);
+}
+
+/* ================= HERO SLIDER ================= */
+
+.hero-slider {
+    position: relative;
+    height: 90dvh;
+}
+
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.5) 60%,
+        #ffffff 100%
+    );
+    pointer-events: none;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    filter: contrast(1.05) saturate(1.05);
+    pointer-events: none;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.6)
+    );
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slide-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+.slide h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.slide p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: var(--red);
+}
+
+/* ===== ЛОГО В ПЕРВОМ СЛАЙДЕ ===== */
+
+.slide-logo {
+    background: #ffffff;
+}
+
+.hero-logo {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.slide-logo::before {
+    display: none;
+}
+
+/* ================= ADVANTAGES ================= */
+
+.advantages {
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 60%, #f0f0f0 60%);
+}
+
+.advantages::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: url('../images/horse-outline.png') no-repeat center/contain;
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.advantages h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.adv-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    border-top: 5px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    transition: 0.3s;
+}
+
+.adv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.1);
+}
+
+.adv-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(225,6,0,0.08);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* ================= SPONSORS ================= */
+
+.sponsors {
+    padding: 80px 0;
+    background: #fafafa;
+    text-align: center;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.sponsor-grid img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    margin: 0 auto;
+    filter: none;
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.sponsor-grid img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+.footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--red);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ================= ANIMATIONS ================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger span {
+    height: 3px;
+    width: 25px;
+    background: var(--black);
+    margin-bottom: 4px;
+}
+
+/*=============== ABOUT MEROPRIYATIE ==============*/
+.about-big {
+    padding: 100px 0;
+    text-align: center;
+    background: #ffffff;
+}
+
+
+.about-text {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* ================= FESTIVAL INFO ================= */
+
+.festival-info {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.festival-date {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--red);
+    margin: 20px 0 40px;
+}
+
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.festival-item {
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+    border-top: 5px solid var(--gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.festival-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.festival-description {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+/* ================= PROGRAM ================= */
+
+.festival-program {
+    padding: 100px 0px;
+    position: relative;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+
+.festival-icon img {
+    width: 20%;      
+    height: auto;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.festival-program::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: url('../images/horse-outline2.png') no-repeat center/contain;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.festival-program .container {
+    position: relative;
+    z-index: 1;
+}
+.festival-program h2 {
+    text-align: center;
+}
+
+.program-list {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.program-list li {
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    position: relative;
+
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+
+    text-align: center;
+}
+
+.program-list li::before {
+    display: none;
+}
+
+/* ================= JUDGES ================= */
+
+.judges {
+    padding: 90px 0;
+}
+
+.judges h2 {
+     text-align: center;
+     padding-bottom: 20px;
+}
+
+.judges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.judge-card {
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ================= SECTION TITLES ================= */
+
+section h2 {
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: clamp(26px, 4vw, 42px);
+}
+
+/* =======================================================
+   ================== MEDIA QUERIES ======================
+   ======================================================= */
+
+/* ===== 1200px ===== */
+@media (max-width: 1200px) {
+
+    .nav {
+        gap: 20px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+}
+
+/* ===== 1024px ===== */
+@media (max-width: 1024px) {
+
+    /* HEADER */
+    .burger {
+        display: flex;
+        z-index: 2000;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .nav {
+        position: fixed;
+        top: 70px;
+        right: -260px;
+        left: auto;              /* ВАЖНО */
+        transform: none;         /* ВАЖНО */
+
+        width: 240px;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 25px;
+        gap: 20px;
+
+        box-shadow: -5px 10px 30px rgba(0,0,0,0.15);
+        border-radius: 8px 0 0 8px;
+        transition: right 0.3s ease;
+        z-index: 1500;
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    /* HERO */
+    .slide h1 {
+        font-size: 40px;
+    }
+
+    .slide p {
+        font-size: 18px;
+    }
+
+    /* ADVANTAGES */
+    .advantages {
+        padding: 30px 0;
+    }
+
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* ABOUT */
+    .about-text {
+        font-size: 18px;
+    }
+
+    /* SPONSORS */
+    .sponsor-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== 768px ===== */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero-slider {
+        height: 100dvh;
+    }
+
+    .slide h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .slide p {
+        font-size: 16px;
+    }
+
+    .slide-content {
+        padding: 0 15px;
+    }
+
+    /* ADVANTAGES */
+    .advantages {
+        padding: 10px 0;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .adv-card {
+        padding: 5px;
+    }
+
+    .adv-number {
+        font-size: 36px;
+    }
+
+    .advantages::before {
+        width: 300px;
+        height: 300px;
+        left: -80px;
+        opacity: 0.03;
+    }
+
+    /* ABOUT */
+    .about-big {
+        padding: 30px 0;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    /* FESTIVAL */
+    .festival-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .festival-program {
+        padding: 20px 0;
+    }
+
+    .festival-program::before {
+        display: none;
+    }
+
+    .program-list {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .program-list li {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+
+    /* JUDGES */
+    .judges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* SPONSORS */
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .sponsor-grid img {
+        max-width: 120px;
+    }
+}
+
+/* ===== 480px ===== */
+@media (max-width: 480px) {
+
+    .logo img {
+        height: 30px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .slide h1 {
+        font-size: 24px;
+    }
+
+    .adv-card {
+        padding: 20px;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ЛОГО ===== */
+
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 85%;
+        max-height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        max-width: 90%;
+        max-height: 75%;
+    }
+}
+
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  background: #e30613;
+  color: #fff;
+}
+
+.ticker__track {
+  display: flex;
+  will-change: transform;
+}
+
+.ticker__item {
+  white-space: nowrap;
+
+  /* ключевое изменение */
+  padding: 10px 0;     /* убрали боковые отступы */
+  margin: 0;           /* убрали возможные внешние */
+  
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* мобилки */
+@media (max-width: 768px) {
+  .ticker__item {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+}
